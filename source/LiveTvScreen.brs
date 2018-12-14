@@ -1,5 +1,5 @@
 '**********************************************************
-'** createLiveTvChannelsScreen
+'** Jellfin Roku Client - createLiveTvChannelsScreen
 '**********************************************************
 
 Function createLiveTvChannelsScreen(viewController as Object) As Object
@@ -99,14 +99,7 @@ End Function
 
 Function createLiveTvGuideScreen(viewController as Object) as Object
 
-	limit = 3
-	supporterLimit = 80
-	
-	if IsActiveSupporter() then
-		limit = supporterLimit
-	else
-		createDialog("Support Emby", "Full use of the TV Guide requires an active Emby Premiere subscription. Results will be limited to " + tostr(limit) + " channels. Get Emby Premiere by visiting the server dashboard in the web interface.", "Back", true)
-	end if
+	limit = 80
 	
 	result = getFavoriteChannels(limit)
 	
