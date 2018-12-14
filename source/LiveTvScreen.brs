@@ -1,6 +1,5 @@
 '**********************************************************
 '** Jellfin Roku Client - createLiveTvChannelsScreen
-'** Forked from Emby
 '**********************************************************
 
 Function createLiveTvChannelsScreen(viewController as Object) As Object
