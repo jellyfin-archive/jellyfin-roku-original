@@ -1802,26 +1802,6 @@ Sub vcDestroyGlitchyScreens()
     next
 End Sub
 
-Function GetAppMessageFromGit() as string
-    ' URL
-        url = "https://raw.githubusercontent.com/MediaBrowser/Emby.Roku/master/content/newappmesssage.txt"
-
-        ' Prepare Request
-        request = HttpRequest(url)
-        request.ContentType("text")
-
-        ' Execute Request
-        response = request.GetToStringWithTimeout(10)
-        if response <> invalid
-
-            return response
-        else
-            Print "Error getting file from Github"
-            return ""
-        end if
-    
-End Function
-
 Sub CheckDisplayBetaHint()
 
     lastDateString = RegRead("lastBetaHintDisplay")
@@ -1851,16 +1831,8 @@ Sub CheckDisplayBetaHint()
     
     RegWrite("lastBetaHintDisplay", lastSeconds)
 
-    message = GetAppMessageFromGit()
-
-    if message = "" or message.left(1) = "0" then 
-        Print "No message to display"
-        return
-    end if
-
-    message = message.split("|")
-    title = FirstOf(message[0], "Try our fresh new app!")
-    msg = FirstOf(message[1], "Preview the upcoming much improved Emby Roku app now!  A beautifully redesigned interface that allows you to view your Emby content on your Roku like never before.  Try it now by installing the private preview channel at http://emby.media/roku")
+	title = "This is an Early Beta"
+	msg = "Check for the latest information on this, and everything Jellyfin, at https://github.com/jellyfin"
     
     port = CreateObject("roMessagePort")
     dialog = CreateObject("roMessageDialog")
