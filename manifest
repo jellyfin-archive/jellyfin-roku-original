@@ -1,4 +1,4 @@
-title=Emby
+title=Jellyfin
 mm_icon_focus_hd=pkg:/images/channel/hd-home-tile.png
 mm_icon_side_hd=pkg:/images/channel/hd-side-tile.png
 mm_icon_focus_sd=pkg:/images/channel/sd-home-tile.png
@@ -9,6 +9,6 @@ version=2.25
 major_version=2
 minor_version=2
 build_version=5
-splash_min_time=3000
+splash_min_time=1500
 screensaver_private=0
-screensaver_title=Emby
+screensaver_title=Jellyfin
