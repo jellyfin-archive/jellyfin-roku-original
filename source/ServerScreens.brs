@@ -13,7 +13,7 @@ Function createServerFirstRunSetupScreen(viewController as Object)
     paragraphs = []
     paragraphs.Push("With Jellyfin you can easily stream videos, music and photos to Roku and other devices from your Jellyfin Server.")
     paragraphs.Push("To begin, please make sure your Server is currently running. For information on how to download and install Emby Server, visit:")
-    paragraphs.Push("http://www.jellyfin.media")
+    paragraphs.Push("https://jellyfin.media")
 
     screen = createParagraphScreen(header, paragraphs, viewController)
     screen.ScreenName = "FirstRun"

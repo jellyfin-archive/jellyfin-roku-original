@@ -1832,7 +1832,7 @@ Sub CheckDisplayBetaHint()
     RegWrite("lastBetaHintDisplay", lastSeconds)
 
 	title = "This is an Early Beta"
-	msg = "Check for the latest information on this, and everything Jellyfin, at https://github.com/jellyfin"
+	msg = "Check for the latest information on this, and everything Jellyfin, at https://jellyfin.media"
     
     port = CreateObject("roMessagePort")
     dialog = CreateObject("roMessageDialog")
