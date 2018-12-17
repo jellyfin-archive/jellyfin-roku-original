@@ -216,3 +216,6 @@ pip-log.txt
 
 # Corel Auto-Preserve Folder
 images/Corel Auto-Preserve
+
+# Temp Roku Build
+.out
