@@ -36,12 +36,21 @@ Function handleFirstRunSetupScreenButton(command, data) As Boolean
 	m.goHomeOnPop = true
 	
     if command = "gonext"
+		facade = CreateObject("roOneLineDialog")
+		facade.SetTitle("Please wait...")
+		facade.ShowBusyAnimation()
+		facade.Show()
+		
+		result = ConnectionManager().connectInitial()
+		
+		facade.Close()
+		
+		' Don't get stuck in a loop and keep coming back here
+		if result.State = "ConnectSignIn" then result.State = "ServerSelection"
+		
+		navigateFromConnectionResult(result)
 	
-        screen = createConnectSignInScreen(m.ViewController)
-		m.ViewController.InitializeOtherScreen(screen, ["Connect"])
-		screen.Show()
-	
-		return false
+        return false
 
     else if command = "exit"
 
@@ -109,32 +118,6 @@ Function createServerListScreen(viewController as Object)
 
     contentList.push( entry )
 	
-	if ConnectionManager().isLoggedIntoConnect() = true then
-	
-		entry = {
-            Title: ">> Sign out of Emby Connect",
-            ShortDescriptionLine1: "Sign out of Emby Connect",
-            Action: "signout",
-            HDBackgroundImageUrl: viewController.getThemeImageUrl("hd-server-lg.png"),
-            SDBackgroundImageUrl: viewController.getThemeImageUrl("sd-server-lg.png")
-        }
-
-		contentList.push( entry )
-
-	else
-	
-		entry = {
-            Title: ">> Sign in with Emby Connect",
-            ShortDescriptionLine1: "Sign in with Emby Connect",
-            Action: "signin",
-            HDBackgroundImageUrl: viewController.getThemeImageUrl("hd-server-lg.png"),
-            SDBackgroundImageUrl: viewController.getThemeImageUrl("sd-server-lg.png")
-        }
-
-		contentList.push( entry )
-
-	end if
-
     ' Set Content
     screen.SetContent(contentList)
 

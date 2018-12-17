@@ -189,18 +189,6 @@ Function getLoginScreenDataContainer(viewController as Object, item as Object) a
     }
     profiles.Push( switchServer )
 
-	if ConnectionManager().isLoggedIntoConnect() = false then
-		' Add Server Tile (eventually move this)
-		connect = {
-			Title: "Sign in with Emby Connect"
-			ContentType: "ConnectSignIn"
-			ShortDescriptionLine1: "Sign in with Emby Connect"
-			HDPosterUrl: viewController.getThemeImageUrl("hd-connectsignin.jpg"),
-			SDPosterUrl: viewController.getThemeImageUrl("hd-connectsignin.jpg")
-		}
-		profiles.Push( connect )
-	end if
-	
 	obj = CreateObject("roAssociativeArray")
 	obj.names = []
 	obj.keys = []
