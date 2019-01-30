@@ -4,8 +4,9 @@ Jellyfin-Roku is a local client for your roku devices allowing you to connect to
 
 Currently Jellyfin-Roku connects you to your server through http.
 
-![jellyfin_roku_screenshots.jpg](Jellyfin-Roku Home)
-![jellyfin_description_roku.jpg](Item Description)
+![Roku Screenshots](screenshots/jellyfin_roku_screenshots.jpg)
+
+![Roku Screenshots 2](screenshots/jellyfin_description_roku.jpg)
 
 ### Getting Started Developing Jellyfin-Roku
 
