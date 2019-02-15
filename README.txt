@@ -5,7 +5,12 @@ First enable developer mode on your Roku device:
 
 http://sdkdocs.roku.com/display/sdkdoc/Developer+Guide
 
-Then, zip up the source code directory. Visit 192.168.1.100 in your browser, updating the IP address with the IP of the Roku device. From here you can upload the zip to the device.
+Then, zip up the source code directory.
+- By this, we mean zip up all of the files in the cloned directory.  
+- Do not misunderstand this instruction to mean zip up only the 'source' directory inside the main cloned directory.  
+- You must go into the top level cloned directory 'jellyfin-roku', select all files and folders, and create a zip archive.
+
+Visit 192.168.1.100 in your browser, updating the IP address with the IP of the Roku device. From here you can upload the zip to the device.
 
 To debug, use any telnet client on port 8085 of the Roku. In windows, open a command promt:
 
