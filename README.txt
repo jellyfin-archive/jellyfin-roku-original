@@ -5,14 +5,15 @@ First enable developer mode on your Roku device:
 
 http://sdkdocs.roku.com/display/sdkdoc/Developer+Guide
 
-Git clone this project.
-Zip up the contents of the main project directory(Eg: jellyfin-roku) such that the manifest is at the root of the archive.
-Visit 192.168.1.100 in your browser, updating the IP address with the IP of the Roku device. From here, you can upload the zip to the device.
+- Git clone this project.
+- Zip up the contents of the main project directory(Eg: jellyfin-roku) such that the manifest file is at the root of the archive.
+- Visit the IP address of your Roku device. From here, you can upload the created zip file to the device.
 
-To debug, use any telnet client on port 8085 of the Roku. In windows, open a command promt:
+
+To debug, use any telnet client to connect to port 8085 of the Roku. In windows, open a command promt:
 
 telnet
-o 192.168.1.100 8085
+o <ROKU-IP> 8085
 
 
 Guidelines for Pull Requests
